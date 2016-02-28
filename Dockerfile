@@ -9,7 +9,7 @@ ENV GOCD_VERSION=15.2.0-2248 \
     GROUP_ID=999  \
     JAVA_HOME=/opt/jdk
 
-RUN apk --update add unzip git  \
+RUN apk --update add unzip git openssh-client \
     && curl -fSL https://download.go.cd/binaries/${GOCD_VERSION}/generic/go-agent-${GOCD_VERSION}.zip -o /tmp/go-agent-${GOCD_VERSION}.zip \
     && unzip /tmp/go-agent-${GOCD_VERSION}.zip -d /var/lib/ \
     && mv /var/lib/go-agent* /var/lib/go-agent \
