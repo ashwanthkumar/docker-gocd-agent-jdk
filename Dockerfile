@@ -70,4 +70,3 @@ CMD if [ -n "$DOCKER_GID_ON_HOST" ]; \
     done; \
     ps aux; \
     /bin/su - ${USER_NAME} -c "exec tail -F /var/log/go-agent/*"
-
