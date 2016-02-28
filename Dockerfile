@@ -2,7 +2,7 @@ FROM anapsix/alpine-java:jdk8
 
 MAINTAINER Ashwanth Kumar
 
-ENV GOCD_VERSION=15.2.0-2248 \
+ENV GOCD_VERSION=16.1.0-2855 \
     USER_NAME=go \
     USER_ID=999 \
     GROUP_NAME=go \
