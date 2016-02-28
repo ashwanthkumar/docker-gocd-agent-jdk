@@ -29,6 +29,8 @@ RUN apk --update add unzip git openssh-client \
     && echo "export JAVA_HOME=${JAVA_HOME}" | tee -a /root/.bash_profile  \
     && echo "export JAVA_HOME=${JAVA_HOME}" | tee -a /var/go/.profile  \
     && echo "export JAVA_HOME=${JAVA_HOME}" | tee -a /var/go/.bash_profile  \
+    && ln -s ${JAVA_HOME}/bin/java /usr/bin/java  \
+    && ln -s ${JAVA_HOME}/bin/javac /usr/bin/javac  \
     && rm -rf /var/cache/apk/* /tmp/*
 
 # runtime environment variables
