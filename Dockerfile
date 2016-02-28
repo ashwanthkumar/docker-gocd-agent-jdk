@@ -2,7 +2,7 @@ FROM anapsix/alpine-java:jdk8
 
 MAINTAINER Ashwanth Kumar
 
-ENV GOCD_VERSION=16.2.1-3027 \
+ENV GOCD_VERSION=15.2.0-2248 \
     USER_NAME=go \
     USER_ID=999 \
     GROUP_NAME=go \
@@ -70,4 +70,3 @@ CMD if [ -n "$DOCKER_GID_ON_HOST" ]; \
     done; \
     ps aux; \
     /bin/su - ${USER_NAME} -c "exec tail -F /var/log/go-agent/*"
-
