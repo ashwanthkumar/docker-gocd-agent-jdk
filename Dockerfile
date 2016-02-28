@@ -23,7 +23,12 @@ RUN apk --update add unzip git  \
     && chown -R ${USER_NAME}:${GROUP_NAME} /var/go  \
     && chmod +x /var/lib/go-agent/agent.sh  \
     && chown -R ${USER_NAME}:${GROUP_NAME} /var/lib/go-agent/  \
-    && echo "export JAVA_HOME=${JAVA_HOME}" | tee -a /etc/default/go-agent  \
+    # && echo "export JAVA_HOME=${JAVA_HOME}" | tee -a /etc/default/go-agent  \
+    # Add JAVA_HOME environment variable to go and root user profiles
+    && echo "export JAVA_HOME=${JAVA_HOME}" | tee -a /root/.profile  \
+    && echo "export JAVA_HOME=${JAVA_HOME}" | tee -a /root/.bash_profile  \
+    && echo "export JAVA_HOME=${JAVA_HOME}" | tee -a /var/go/.profile  \
+    && echo "export JAVA_HOME=${JAVA_HOME}" | tee -a /var/go/.bash_profile  \
     && rm -rf /var/cache/apk/* /tmp/*
 
 # runtime environment variables
